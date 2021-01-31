@@ -73,13 +73,6 @@ def report_day(sess, t):
                 "p1$QiuZZT": "",
                 "p1$JiuYKN": "",
                 "p1$JiuYSJ": "",
-                "p1$ZaiXiao": "不在校",
-                "p1$MingTDX": "不到校",
-                "p1$MingTJC": "否",
-                "p1$BanChe_1$Value": "0",
-                "p1$BanChe_1": "不需要乘班车",
-                "p1$BanChe_2$Value": "0",
-                "p1$BanChe_2": "不需要乘班车",
                 "p1$GuoNei": "国内",
                 "p1$ddlGuoJia$Value": "-1",
                 "p1$ddlGuoJia": "选择国家",
@@ -92,6 +85,7 @@ def report_day(sess, t):
                 "p1$ddlXian$Value": ddlXian,    # 县
                 "p1$ddlXian": ddlXian,  # 县
                 "p1$XiangXDZ": XiangXDZ,    # 详细地址
+                "p1$ShiFZJ": "是",  # 是否家庭住址
                 "p1$FengXDQDL": "否",
                 "p1$TongZWDLH": "否",
                 "p1$CengFWH": "否",
@@ -116,6 +110,7 @@ def report_day(sess, t):
                 "p1$SuiSM": "绿色",
                 "p1$LvMa14Days": "是",
                 "p1$Address2": "",
+                "F_TARGET": "p1_ctl00_btnSubmit",
                 "p1_ContentPanel1_Collapsed": "true",
                 "p1_GeLSM_Collapsed": "false",
                 "p1_Collapsed": "false",
