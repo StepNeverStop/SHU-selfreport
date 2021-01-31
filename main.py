@@ -49,6 +49,13 @@ def report_day(sess, t):
     ShiFSH, ShiFZX, ddlSheng, ddlShi, ddlXian, XiangXDZ = get_last_report(sess, t)
     print(f'是否在上海：{ShiFSH}', f'是否在校：{ShiFZX}', ddlSheng, ddlShi, ddlXian, XiangXDZ)
 
+    ShiFSH='否'
+    ShiFZX='否'
+    ddlSheng='河南'
+    ddlShi='安阳市'
+    ddlXian='滑县'
+    XiangXDZ='华通世纪城'
+
     while True:
         try:
             r = sess.post(url, data={
@@ -76,15 +83,15 @@ def report_day(sess, t):
                 "p1$GuoNei": "国内",
                 "p1$ddlGuoJia$Value": "-1",
                 "p1$ddlGuoJia": "选择国家",
-                "p1$ShiFSH": ShiFSH,
-                "p1$ShiFZX": ShiFZX,
-                "p1$ddlSheng$Value": ddlSheng,
-                "p1$ddlSheng": ddlSheng,
-                "p1$ddlShi$Value": ddlShi,
-                "p1$ddlShi": ddlShi,
-                "p1$ddlXian$Value": ddlXian,
-                "p1$ddlXian": ddlXian,
-                "p1$XiangXDZ": XiangXDZ,
+                "p1$ShiFSH": ShiFSH,    # 是否在上海
+                "p1$ShiFZX": ShiFZX,    # 是否在学校
+                "p1$ddlSheng$Value": ddlSheng,  # 省
+                "p1$ddlSheng": ddlSheng,    # 省
+                "p1$ddlShi$Value": ddlShi,  # 市
+                "p1$ddlShi": ddlShi,    # 市
+                "p1$ddlXian$Value": ddlXian,    # 县
+                "p1$ddlXian": ddlXian,  # 县
+                "p1$XiangXDZ": XiangXDZ,    # 详细地址
                 "p1$FengXDQDL": "否",
                 "p1$TongZWDLH": "否",
                 "p1$CengFWH": "否",
@@ -236,12 +243,12 @@ if __name__ == "__main__":
                 t = START_DT
                 while t < now:
                     report_day(sess, t)
-                    report_halfday(sess, t + dt.timedelta(hours=8))
-                    report_halfday(sess, t + dt.timedelta(hours=20))
+                    # report_halfday(sess, t + dt.timedelta(hours=8))
+                    # report_halfday(sess, t + dt.timedelta(hours=20))
 
                     t = t + dt.timedelta(days=1)
 
             report_day(sess, get_time())
-            report_halfday(sess, get_time())
+            # report_halfday(sess, get_time())
 
         time.sleep(60)
