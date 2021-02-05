@@ -2107,13 +2107,13 @@
             ]
         ],
         "SelectedValueArray": [
-            "普陀区"
+            ""
         ]
     },
     "p1_XiangXDZ": {
         "Hidden": false,
         "Label": "国内详细地址（省市区县无需重复填写）",
-        "Text": "石岚三村111号111"
+        "Text": ""
     },
     "p1_ShiFZJ": {
         "Required": true,

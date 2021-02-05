@@ -47,7 +47,7 @@ def report_day(sess, t):
 
     BaoSRQ = t.strftime('%Y-%m-%d')
     ShiFSH, ShiFZX, ddlSheng, ddlShi, ddlXian, XiangXDZ = get_last_report(sess, t)
-    print(f'是否在上海：{ShiFSH}', f'是否在校：{ShiFZX}', ddlSheng, ddlShi, ddlXian, XiangXDZ)
+    print(f'是否在上海：{ShiFSH}', f'是否在校：{ShiFZX}', ddlSheng, ddlShi, ddlXian, '详细地址已隐去')
 
     ShiFSH='否'
     ShiFZX='否'
@@ -228,7 +228,7 @@ if __name__ == "__main__":
         if user in ['00000000', '11111111']:
             continue
 
-        print(f'======{user}======')
+        print(f'============')
         sess = login(user, config[user]['pwd'])
 
         if sess:
