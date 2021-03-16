@@ -46,8 +46,10 @@ def report_day(sess, t):
         return False
 
     BaoSRQ = t.strftime('%Y-%m-%d')
-    ShiFSH, ShiFZX, ddlSheng, ddlShi, ddlXian, XiangXDZ = get_last_report(sess, t)
-    print(f'是否在上海：{ShiFSH}', f'是否在校：{ShiFZX}', ddlSheng, ddlShi, ddlXian, '详细地址已隐去')
+    ShiFSH, ShiFZX, ddlSheng, ddlShi, ddlXian, XiangXDZ, ShiFZJ = get_last_report(sess, t)
+    print(f'是否在上海：{ShiFSH}', f'是否在校：{ShiFZX}')
+    print(ddlSheng, ddlShi, ddlXian, f'###{XiangXDZ[-2:]}')
+    print(f'是否为家庭地址：{ShiFZJ}')
 
     ShiFSH='否'
     ShiFZX='否'
@@ -115,7 +117,7 @@ def report_day(sess, t):
                 "p1_GeLSM_Collapsed": "false",
                 "p1_Collapsed": "false",
                 "F_STATE": generate_fstate_day(BaoSRQ, ShiFSH, ShiFZX,
-                                               ddlSheng, ddlShi, ddlXian, XiangXDZ)
+                                               ddlSheng, ddlShi, ddlXian, XiangXDZ, ShiFZJ)
             }, headers={
                 'X-Requested-With': 'XMLHttpRequest',
                 'X-FineUI-Ajax': 'true'
@@ -228,7 +230,7 @@ if __name__ == "__main__":
         if user in ['00000000', '11111111']:
             continue
 
-        print(f'============')
+        print(f'====={user[-4:]}=====')
         sess = login(user, config[user]['pwd'])
 
         if sess:
