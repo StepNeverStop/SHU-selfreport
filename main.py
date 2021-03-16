@@ -51,12 +51,13 @@ def report_day(sess, t):
     print(ddlSheng, ddlShi, ddlXian, f'###{XiangXDZ[-2:]}')
     print(f'是否为家庭地址：{ShiFZJ}')
 
-    ShiFSH='否'
-    ShiFZX='否'
-    ddlSheng='河南'
-    ddlShi='安阳市'
-    ddlXian='滑县'
-    XiangXDZ='华通世纪城'
+    ShiFSH='是'
+    ShiFZX='是'
+    ddlSheng='上海'
+    ddlShi='上海市'
+    ddlXian='宝山区'
+    XiangXDZ='校内2号楼611'
+    ShiFZJ='否'
 
     while True:
         try:
@@ -87,7 +88,7 @@ def report_day(sess, t):
                 "p1$ddlXian$Value": ddlXian,    # 县
                 "p1$ddlXian": ddlXian,  # 县
                 "p1$XiangXDZ": XiangXDZ,    # 详细地址
-                "p1$ShiFZJ": "是",  # 是否家庭住址
+                "p1$ShiFZJ": ShiFZJ,  # 是否家庭住址
                 "p1$FengXDQDL": "否",
                 "p1$TongZWDLH": "否",
                 "p1$CengFWH": "否",
